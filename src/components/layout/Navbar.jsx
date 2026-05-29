@@ -23,12 +23,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[70px]">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 no-underline">
-          <div
-            className="w-11 h-11 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
-            style={{ background: 'linear-gradient(135deg, #D4AF37, #b8960f)' }}
-          >
-            🔱
-          </div>
+          <img
+            src="https://res.cloudinary.com/dynbpb9u0/image/upload/v1780030063/vastulogo_jztzei.png"
+            alt="Vastulogy Logo"
+            className="w-11 h-11 rounded-full flex-shrink-0 object-cover"
+          />
           <div>
             <div className="font-cormorant font-bold text-xl" style={{ color: '#D4AF37', letterSpacing: 1 }}>
               Vastulogy

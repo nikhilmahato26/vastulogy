@@ -11,12 +11,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div
-                className="w-11 h-11 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
-                style={{ background: 'linear-gradient(135deg, #D4AF37, #b8960f)' }}
-              >
-                🔱
-              </div>
+              <img
+                src="https://res.cloudinary.com/dynbpb9u0/image/upload/v1780030063/vastulogo_jztzei.png"
+                alt="Vastulogy Logo"
+                className="w-11 h-11 rounded-full flex-shrink-0 object-cover"
+              />
               <div>
                 <div className="font-cormorant font-bold text-xl" style={{ color: '#D4AF37' }}>Vastulogy</div>
                 <div className="text-xs tracking-widest uppercase" style={{ color: '#64748B', fontSize: 9 }}>DEHRADUN, INDIA</div>
