@@ -104,10 +104,10 @@ export function Badge({ children, light = false }) {
 }
 
 /* ─── Service card ───────────────────────────────────────── */
-export function ServiceCard({ icon, title, desc, light = false }) {
+export function ServiceCard({ icon, title, desc, slug, light = false }) {
   return (
     <div
-      className="rounded-2xl p-7 transition-all duration-300 cursor-default"
+      className="rounded-2xl p-7 transition-all duration-300 cursor-default flex flex-col"
       style={{
         background: light ? 'rgba(255,255,255,0.03)' : '#fff',
         border: `1px solid ${light ? 'rgba(212,175,55,0.15)' : 'rgba(212,175,55,0.22)'}`,
@@ -126,15 +126,24 @@ export function ServiceCard({ icon, title, desc, light = false }) {
     >
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="font-cormorant font-bold text-lg mb-2" style={{ color: light ? '#D4AF37' : '#8B6914' }}>{title}</h3>
-      <p className="text-sm leading-relaxed mb-4" style={{ color: light ? '#94A3B8' : '#64748B' }}>{desc}</p>
-      {light && <span style={{ color: '#D4AF37', fontSize: 13, fontWeight: 600 }}>Learn more →</span>}
+      <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: light ? '#94A3B8' : '#64748B' }}>{desc}</p>
+      {light && slug && (
+        <a
+          href={`/services/${slug}`}
+          style={{ color: '#D4AF37', fontSize: 13, fontWeight: 600, textDecoration: 'none' }}
+          onMouseEnter={e => { e.currentTarget.style.textDecoration = 'underline' }}
+          onMouseLeave={e => { e.currentTarget.style.textDecoration = 'none' }}
+        >
+          Learn more →
+        </a>
+      )}
     </div>
   )
 }
 
 /* ─── Pricing card ───────────────────────────────────────── */
 export function PricingCard({ plan }) {
-  const { name, price, unit, icon, popular, features } = plan
+  const { name, price, unit, icon, popular, features, paymentLink } = plan
   return (
     <div
       className="rounded-3xl p-9 transition-all duration-300 relative"
@@ -179,7 +188,9 @@ export function PricingCard({ plan }) {
       </div>
       <div className="flex gap-3">
         <a
-          href="#contact"
+          href={paymentLink || '#contact'}
+          target={paymentLink ? '_blank' : undefined}
+          rel={paymentLink ? 'noreferrer' : undefined}
           className="flex-1 text-center py-3 rounded-xl text-sm font-bold"
           style={{ background: 'linear-gradient(135deg, #D4AF37, #b8960f)', color: '#0F172A', textDecoration: 'none' }}
         >

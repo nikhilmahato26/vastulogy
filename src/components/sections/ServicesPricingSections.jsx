@@ -17,7 +17,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {SERVICES.map((s, i) => (
             <Reveal key={i} delay={i * 0.05}>
-              <ServiceCard icon={s.icon} title={s.title} desc={s.desc} light />
+              <ServiceCard icon={s.icon} title={s.title} desc={s.desc} slug={s.slug} light />
             </Reveal>
           ))}
         </div>

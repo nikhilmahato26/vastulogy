@@ -121,7 +121,7 @@ export default function Hero() {
             style={{ animationDelay: '0.8s' }}
           >
             <a
-              href="#contact"
+              href="#pricing"
               className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm no-underline"
               style={{
                 background: 'linear-gradient(135deg, #D4AF37, #b8960f)',
